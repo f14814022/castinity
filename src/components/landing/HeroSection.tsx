@@ -1,23 +1,9 @@
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { Phone, ShieldCheck, Wifi, Zap, Sparkles, CheckCircle2, Clock, TrendingUp, ArrowRight, Users, Award, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DynamicHeroBackground from "./DynamicHeroBackground";
-import { useEffect } from "react";
 
 const HeroSection = () => {
-  const controls = useAnimation();
-
-  useEffect(() => {
-    controls.start({
-      y: [0, -10, 0],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    });
-  }, [controls]);
-
   return (
     <section id="home" className="relative overflow-x-hidden bg-gradient-to-b from-white via-indigo-50/30 to-white py-16 sm:py-24 lg:py-32 min-h-screen flex items-center">
       {/* Dynamic Animated Background */}

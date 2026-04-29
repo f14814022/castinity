@@ -1,10 +1,28 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const DynamicHeroBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isLowMotion, setIsLowMotion] = useState(false);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px), (prefers-reduced-motion: reduce)");
+
+    const syncMotionMode = () => {
+      setIsLowMotion(mediaQuery.matches);
+    };
+
+    syncMotionMode();
+    mediaQuery.addEventListener("change", syncMotionMode);
+
+    return () => {
+      mediaQuery.removeEventListener("change", syncMotionMode);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isLowMotion) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -96,7 +114,7 @@ const DynamicHeroBackground = () => {
     return () => {
       window.removeEventListener("resize", resizeCanvas);
     };
-  }, []);
+  }, [isLowMotion]);
 
   return (
     <div className="absolute inset-0 overflow-hidden">
@@ -104,21 +122,27 @@ const DynamicHeroBackground = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-white via-indigo-50/40 to-purple-50/50" />
 
       {/* Animated mesh canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-40"
-        style={{ width: "100%", height: "100%" }}
-      />
+      {!isLowMotion && (
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 w-full h-full opacity-40"
+          style={{ width: "100%", height: "100%" }}
+        />
+      )}
+
+      {isLowMotion && (
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(147,51,234,0.16),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(99,102,241,0.14),transparent_35%)]" />
+      )}
 
       {/* Animated gradient orbs */}
       <motion.div
-        animate={{
+        animate={isLowMotion ? undefined : {
           scale: [1, 1.3, 1],
           opacity: [0.1, 0.2, 0.1],
           x: [0, 50, 0],
           y: [0, 25, 0],
         }}
-        transition={{
+        transition={isLowMotion ? undefined : {
           duration: 25,
           repeat: Infinity,
           ease: "easeInOut"
@@ -126,37 +150,41 @@ const DynamicHeroBackground = () => {
         className="absolute -top-20 -left-20 w-[300px] sm:w-[400px] lg:w-[600px] h-[300px] sm:h-[400px] lg:h-[600px] bg-gradient-to-br from-indigo-400/30 to-purple-400/20 rounded-full blur-3xl"
       />
 
-      <motion.div
-        animate={{
-          scale: [1, 1.4, 1],
-          opacity: [0.15, 0.25, 0.15],
-          x: [0, -40, 0],
-          y: [0, 40, 0],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 3
-        }}
-        className="absolute top-1/4 -right-20 w-[400px] sm:w-[500px] lg:w-[700px] h-[400px] sm:h-[500px] lg:h-[700px] bg-gradient-to-bl from-purple-400/25 to-pink-300/20 rounded-full blur-3xl"
-      />
+      {!isLowMotion && (
+        <motion.div
+          animate={{
+            scale: [1, 1.4, 1],
+            opacity: [0.15, 0.25, 0.15],
+            x: [0, -40, 0],
+            y: [0, 40, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3
+          }}
+          className="absolute top-1/4 -right-20 w-[400px] sm:w-[500px] lg:w-[700px] h-[400px] sm:h-[500px] lg:h-[700px] bg-gradient-to-bl from-purple-400/25 to-pink-300/20 rounded-full blur-3xl"
+        />
+      )}
 
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.1, 0.2, 0.1],
-          x: [0, 30, 0],
-          y: [0, -30, 0],
-        }}
-        transition={{
-          duration: 22,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 6
-        }}
-        className="absolute bottom-10 left-1/4 w-[250px] sm:w-[350px] lg:w-[500px] h-[250px] sm:h-[350px] lg:h-[500px] bg-gradient-to-tr from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl"
-      />
+      {!isLowMotion && (
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.2, 0.1],
+            x: [0, 30, 0],
+            y: [0, -30, 0],
+          }}
+          transition={{
+            duration: 22,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 6
+          }}
+          className="absolute bottom-10 left-1/4 w-[250px] sm:w-[350px] lg:w-[500px] h-[250px] sm:h-[350px] lg:h-[500px] bg-gradient-to-tr from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl"
+        />
+      )}
 
       {/* Floating geometric shapes */}
       <motion.div
@@ -190,10 +218,10 @@ const DynamicHeroBackground = () => {
 
       {/* Animated gradient waves */}
       <motion.div
-        animate={{
+        animate={isLowMotion ? undefined : {
           backgroundPosition: ["0% 0%", "100% 100%"],
         }}
-        transition={{
+        transition={isLowMotion ? undefined : {
           duration: 15,
           repeat: Infinity,
           repeatType: "reverse",
@@ -225,49 +253,53 @@ const DynamicHeroBackground = () => {
       </div>
 
       {/* Pulse rings */}
-      <motion.div
-        animate={{
-          scale: [0.8, 2.5],
-          opacity: [0.4, 0],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeOut"
-        }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border-2 border-indigo-400 rounded-full"
-      />
+      {!isLowMotion && (
+        <>
+          <motion.div
+            animate={{
+              scale: [0.8, 2.5],
+              opacity: [0.4, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeOut"
+            }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border-2 border-indigo-400 rounded-full"
+          />
 
-      <motion.div
-        animate={{
-          scale: [0.8, 2.5],
-          opacity: [0.4, 0],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeOut",
-          delay: 1.3
-        }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border-2 border-purple-400 rounded-full"
-      />
+          <motion.div
+            animate={{
+              scale: [0.8, 2.5],
+              opacity: [0.4, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeOut",
+              delay: 1.3
+            }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border-2 border-purple-400 rounded-full"
+          />
 
-      <motion.div
-        animate={{
-          scale: [0.8, 2.5],
-          opacity: [0.4, 0],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeOut",
-          delay: 2.6
-        }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border-2 border-blue-400 rounded-full"
-      />
+          <motion.div
+            animate={{
+              scale: [0.8, 2.5],
+              opacity: [0.4, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeOut",
+              delay: 2.6
+            }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border-2 border-blue-400 rounded-full"
+          />
+        </>
+      )}
 
       {/* Particle sparks */}
-      {[...Array(15)].map((_, i) => (
+      {!isLowMotion && [...Array(8)].map((_, i) => (
         <motion.div
           key={i}
           animate={{

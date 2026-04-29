@@ -14,13 +14,28 @@ const Index = () => (
     <Navbar />
     <HeroSection />
     <ServicesSection />
-    <BenefitsSection />
-    <ConnectedSection />
-    <FeatureSection />
-    <TestimonialsSection />
-    <StatsSection />
-    <CTASection />
-    <Footer />
+
+    <div className="[content-visibility:auto] [contain-intrinsic-size:900px]">
+      <BenefitsSection />
+    </div>
+    <div className="[content-visibility:auto] [contain-intrinsic-size:900px]">
+      <ConnectedSection />
+    </div>
+    <div className="[content-visibility:auto] [contain-intrinsic-size:900px]">
+      <FeatureSection />
+    </div>
+    <div className="[content-visibility:auto] [contain-intrinsic-size:900px]">
+      <TestimonialsSection />
+    </div>
+    <div className="[content-visibility:auto] [contain-intrinsic-size:700px]">
+      <StatsSection />
+    </div>
+    <div className="[content-visibility:auto] [contain-intrinsic-size:700px]">
+      <CTASection />
+    </div>
+    <div className="[content-visibility:auto] [contain-intrinsic-size:500px]">
+      <Footer />
+    </div>
   </div>
 );
 
