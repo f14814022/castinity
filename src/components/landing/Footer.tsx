@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Logo from "@/components/Logo";
+import { checkRateLimit, sanitizeEmail, sanitizeText, validateEmail } from "@/lib/security";
 
 const links = {
   Services: [
@@ -23,32 +25,96 @@ const links = {
   ],
 };
 
-const Footer = () => (
-  <footer className="border-t border-white/10 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 pt-16 pb-8">
-    <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-      {/* Newsletter */}
-      <div className="mb-16 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 lg:p-12 text-center">
-        <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
-          Stay Updated on <span className="text-gradient">Our Services</span>
-        </h3>
-        <p className="mt-2 text-gray-300">Receive informational updates and independent guidance tips.</p>
-        <div className="mx-auto mt-6 flex max-w-md gap-3">
-          <div className="relative flex-1">
-            <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full rounded-full bg-white/10 border border-white/20 py-3 pl-10 pr-4 text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-          </div>
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6">
-            Subscribe
-          </Button>
-        </div>
-      </div>
+const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [honeypot, setHoneypot] = useState("");
+  const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
-      {/* Links */}
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+  const handleNewsletterSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const sanitizedEmail = sanitizeEmail(email);
+    const sanitizedHoneypot = sanitizeText(honeypot, 80);
+
+    if (sanitizedHoneypot) {
+      setEmail("");
+      setHoneypot("");
+      setError("");
+      setSuccessMessage("Thanks for your interest.");
+      return;
+    }
+
+    const emailError = validateEmail(sanitizedEmail);
+    if (emailError) {
+      setError(emailError);
+      setSuccessMessage("");
+      return;
+    }
+
+    const rateLimit = checkRateLimit("newsletter-form", 3, 10 * 60 * 1000);
+    if (!rateLimit.allowed) {
+      setError(`Too many signup attempts. Please wait ${rateLimit.retryAfterSeconds} seconds and try again.`);
+      setSuccessMessage("");
+      return;
+    }
+
+    setEmail("");
+    setHoneypot("");
+    setError("");
+    setSuccessMessage("Signup passed validation. To finalize securely on this static site, email support@castinity.com from the same address.");
+  };
+
+  return (
+    <footer className="border-t border-white/10 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 pt-16 pb-8">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+        {/* Newsletter */}
+        <div className="mb-16 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 lg:p-12 text-center">
+          <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
+            Stay Updated on <span className="text-gradient">Our Services</span>
+          </h3>
+          <p className="mt-2 text-gray-300">Receive informational updates and independent guidance tips.</p>
+          <form className="mx-auto mt-6 flex max-w-md flex-col gap-3" onSubmit={handleNewsletterSubmit} noValidate>
+            <input
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              value={honeypot}
+              onChange={(event) => setHoneypot(event.target.value)}
+              className="hidden"
+            />
+            <div className="flex gap-3 max-sm:flex-col">
+              <div className="relative flex-1">
+                <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+                <input
+                  type="email"
+                  autoComplete="email"
+                  inputMode="email"
+                  required
+                  maxLength={120}
+                  value={email}
+                  onChange={(event) => {
+                    setEmail(event.target.value);
+                    setError("");
+                    setSuccessMessage("");
+                  }}
+                  placeholder="Enter your email"
+                  className="w-full rounded-full bg-white/10 border border-white/20 py-3 pl-10 pr-4 text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
+                  aria-invalid={Boolean(error)}
+                />
+              </div>
+              <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6">
+                Subscribe
+              </Button>
+            </div>
+            {error && <p className="text-left text-xs text-red-300">{error}</p>}
+            {successMessage && <p className="text-left text-xs text-green-300">{successMessage}</p>}
+          </form>
+        </div>
+
+        {/* Links */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/" className="flex items-center gap-2 mb-4">
             <Logo showText={false} width={32} height={32} />
@@ -90,15 +156,16 @@ const Footer = () => (
             </ul>
           </div>
         ))}
-      </div>
+        </div>
 
-      <div className="mt-12 border-t border-white/10 pt-6">
-        <p className="text-xs text-gray-400 text-center">
-          © 2026 Castinity. All rights reserved. Castinity is a third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Brand names, if mentioned, are used strictly for informational purposes only.
-        </p>
+        <div className="mt-12 border-t border-white/10 pt-6">
+          <p className="text-xs text-gray-400 text-center">
+            © 2026 Castinity. All rights reserved. Castinity is a third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Brand names, if mentioned, are used strictly for informational purposes only.
+          </p>
+        </div>
       </div>
-    </div>
-  </footer>
-);
+    </footer>
+  );
+};
 
 export default Footer;
