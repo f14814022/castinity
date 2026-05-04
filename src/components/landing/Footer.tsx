@@ -119,7 +119,7 @@ const Footer = () => {
           <Link to="/" className="flex items-center gap-2 mb-4">
             <Logo showText={false} width={32} height={32} />
             <span className="font-display text-lg font-bold text-white">
-              Casti<span className="text-primary">nity</span>
+              Heliora<span className="text-primary">beam</span>
             </span>
           </Link>
           <p className="text-sm text-gray-300 leading-relaxed mb-4">

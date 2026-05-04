@@ -28,7 +28,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-2 flex-shrink-0">
           <Logo showText={false} width={36} height={36} className="sm:w-9 sm:h-9" />
           <span className="font-display text-lg sm:text-xl font-bold text-foreground">
-            Casti<span className="text-primary">nity</span>
+            Heliora<span className="text-primary">beam</span>
           </span>
         </Link>
 
