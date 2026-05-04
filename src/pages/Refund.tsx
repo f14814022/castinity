@@ -34,7 +34,7 @@ const Refund = () => (
                 </div>
                 <h2 className="font-display text-2xl font-bold text-gray-900">1. Overview</h2>
               </div>
-              <p>Castinity is a third-party service assistance startup. This refund policy applies solely to the service fees charged by Castinity for our informational assistance. It does not apply to any charges from your internet, cable, or streaming service provider.</p>
+              <p>Heliorabeam is a third-party service assistance startup. This refund policy applies solely to the service fees charged by Heliorabeam for our informational assistance. It does not apply to any charges from your internet, cable, or streaming service provider.</p>
             </div>
 
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-200">
@@ -77,7 +77,7 @@ const Refund = () => (
                 </div>
                 <h2 className="font-display text-2xl font-bold text-gray-900">4. How to Request a Refund</h2>
               </div>
-              <p>To submit a refund request, contact our team at <a href="mailto:support@castinity.com" className="text-green-600 hover:underline font-semibold">support@castinity.com</a> or call <a href="tel:+18886815944" className="text-green-600 hover:underline font-semibold">(888) 681-5944</a>. Please include your service purchase date and a brief description of the assistance received.</p>
+              <p>To submit a refund request, contact our team at <a href="mailto:support@heliorabeam.com" className="text-green-600 hover:underline font-semibold">support@heliorabeam.com</a> or call <a href="tel:+18886815944" className="text-green-600 hover:underline font-semibold">(888) 681-5944</a>. Please include your service purchase date and a brief description of the assistance received.</p>
             </div>
 
             <div>
@@ -95,7 +95,7 @@ const Refund = () => (
                 <AlertTriangle className="h-6 w-6 text-amber-600" />
                 <h2 className="font-display text-2xl font-bold text-gray-900">6. Important Notice</h2>
               </div>
-              <p className="text-gray-700">Castinity is a third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Our refund policy covers only Castinity service fees — not any provider-billed charges.</p>
+              <p className="text-gray-700">Heliorabeam is a third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Our refund policy covers only Heliorabeam service fees — not any provider-billed charges.</p>
             </div>
           </div>
         </motion.div>

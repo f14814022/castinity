@@ -23,9 +23,9 @@ const About = () => (
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }}>
-            <h2 className="font-display text-2xl font-bold text-foreground mb-4">About Castinity</h2>
+            <h2 className="font-display text-2xl font-bold text-foreground mb-4">About Heliorabeam</h2>
             <p className="text-muted-foreground mb-4">
-              Castinity is a third-party service assistance provider offering general guidance related to internet, broadband, Wi-Fi, and cable TV services. Founded in 2026, we are a startup focused on helping users navigate the often-complex world of connectivity services.
+              Heliorabeam is a third-party service assistance provider offering general guidance related to internet, broadband, Wi-Fi, and cable TV services. Founded in 2026, we are a startup focused on helping users navigate the often-complex world of connectivity services.
             </p>
             <p className="text-muted-foreground mb-4">
               We assist users by providing informational support, helping them understand service options, and offering general guidance on common connectivity-related concerns.
@@ -64,7 +64,7 @@ const About = () => (
         <div className="glass-card rounded-2xl p-8 text-center">
           <ShieldCheck className="mx-auto mb-3 h-8 w-8 text-primary" />
           <p className="text-sm text-muted-foreground max-w-3xl mx-auto">
-            Castinity is an independent third-party service assistance provider, launched in 2026. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Brand names, if mentioned, are used strictly for informational purposes only.
+            Heliorabeam is an independent third-party service assistance provider, launched in 2026. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Brand names, if mentioned, are used strictly for informational purposes only.
           </p>
         </div>
       </div>

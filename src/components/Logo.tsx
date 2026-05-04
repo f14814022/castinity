@@ -10,7 +10,7 @@ interface LogoProps {
 const Logo: React.FC<LogoProps> = ({ 
   className = "", 
   showText = true, 
-  width = 200, 
+  width = 240, 
   height = 60 
 }) => {
   if (!showText) {
@@ -66,7 +66,7 @@ const Logo: React.FC<LogoProps> = ({
     <svg 
       width={width} 
       height={height} 
-      viewBox="0 0 200 60" 
+      viewBox="0 0 240 60" 
       fill="none" 
       xmlns="http://www.w3.org/2000/svg"
       className={className}
@@ -121,7 +121,7 @@ const Logo: React.FC<LogoProps> = ({
         fontWeight="800" 
         fill="#1F2937"
       >
-        Casti<tspan fill="url(#logoGradientFull)">nity</tspan>
+        Heliora<tspan fill="url(#logoGradientFull)">beam</tspan>
       </text>
     </svg>
   );

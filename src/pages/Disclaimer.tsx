@@ -32,7 +32,7 @@ const Disclaimer = () => (
               <h2 className="font-display text-2xl font-bold text-gray-900">Third-Party Service Disclosure</h2>
             </div>
             <p className="text-lg text-gray-700 font-medium">
-              Castinity is a third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Brand names, if mentioned, are used strictly for informational purposes only.
+              Heliorabeam is a third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Brand names, if mentioned, are used strictly for informational purposes only.
             </p>
           </div>
 
@@ -44,7 +44,7 @@ const Disclaimer = () => (
                 </div>
                 <h2 className="font-display text-2xl font-bold text-gray-900">Nature of Our Services</h2>
               </div>
-              <p>Castinity provides general informational guidance and assistance related to internet, broadband, Wi-Fi, and cable TV services. We do not provide internet or cable services directly. We do not sell, activate, or manage subscriptions with any service provider.</p>
+              <p>Heliorabeam provides general informational guidance and assistance related to internet, broadband, Wi-Fi, and cable TV services. We do not provide internet or cable services directly. We do not sell, activate, or manage subscriptions with any service provider.</p>
             </div>
 
             <div>
@@ -54,7 +54,7 @@ const Disclaimer = () => (
                 </div>
                 <h2 className="font-display text-2xl font-bold text-gray-900">No Provider Affiliation</h2>
               </div>
-              <p>Castinity is a third-party service assistance startup, launched in 2026, and is not affiliated with, endorsed by, or sponsored by any cable, internet, or streaming service provider. We do not represent, partner with, or act on behalf of any telecom, internet, or cable TV company.</p>
+              <p>Heliorabeam is a third-party service assistance startup, launched in 2026, and is not affiliated with, endorsed by, or sponsored by any cable, internet, or streaming service provider. We do not represent, partner with, or act on behalf of any telecom, internet, or cable TV company.</p>
             </div>
 
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-200">
@@ -62,7 +62,7 @@ const Disclaimer = () => (
                 <Info className="h-6 w-6 text-green-600" />
                 <h2 className="font-display text-2xl font-bold text-gray-900">Service Fees</h2>
               </div>
-              <p>Castinity charges a separate service fee for independent informational assistance. These fees are distinct from any charges billed by your internet, cable, or streaming service provider. Your provider billing remains unchanged.</p>
+              <p>Heliorabeam charges a separate service fee for independent informational assistance. These fees are distinct from any charges billed by your internet, cable, or streaming service provider. Your provider billing remains unchanged.</p>
             </div>
 
             <div>
@@ -97,7 +97,7 @@ const Disclaimer = () => (
 
             <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-6 border border-indigo-200">
               <h2 className="font-display text-2xl font-bold text-gray-900 mb-3">Contact</h2>
-              <p>For any questions regarding this disclaimer, please contact us at <a href="mailto:support@castinity.com" className="text-red-600 hover:underline font-semibold">support@castinity.com</a> or call <a href="tel:+18886815944" className="text-red-600 hover:underline font-semibold">(888) 681-5944</a>.</p>
+              <p>For any questions regarding this disclaimer, please contact us at <a href="mailto:support@heliorabeam.com" className="text-red-600 hover:underline font-semibold">support@heliorabeam.com</a> or call <a href="tel:+18886815944" className="text-red-600 hover:underline font-semibold">(888) 681-5944</a>.</p>
             </div>
           </div>
         </motion.div>

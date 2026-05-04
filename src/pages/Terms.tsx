@@ -34,7 +34,7 @@ const Terms = () => (
                 </div>
                 <h2 className="font-display text-2xl font-bold text-gray-900">1. About Our Service</h2>
               </div>
-              <p>Castinity is a third-party service assistance startup, launched in 2026. We provide general informational guidance and support related to internet, broadband, Wi-Fi, and cable TV services. We are not affiliated with, endorsed by, or sponsored by any cable, internet, or streaming service provider.</p>
+              <p>Heliorabeam is a third-party service assistance startup, launched in 2026. We provide general informational guidance and support related to internet, broadband, Wi-Fi, and cable TV services. We are not affiliated with, endorsed by, or sponsored by any cable, internet, or streaming service provider.</p>
             </div>
 
             <div>
@@ -78,7 +78,7 @@ const Terms = () => (
                 <DollarSign className="h-6 w-6 text-green-600" />
                 <h2 className="font-display text-2xl font-bold text-gray-900">3. Service Fees</h2>
               </div>
-              <p className="text-gray-700">Castinity charges a separate service fee for the independent informational assistance we provide. These fees are distinct from any charges billed by your internet, cable, or streaming service provider. Your provider billing remains unchanged by your use of our services.</p>
+              <p className="text-gray-700">Heliorabeam charges a separate service fee for the independent informational assistance we provide. These fees are distinct from any charges billed by your internet, cable, or streaming service provider. Your provider billing remains unchanged by your use of our services.</p>
             </div>
 
             <div>
@@ -108,12 +108,12 @@ const Terms = () => (
                 </div>
                 <h2 className="font-display text-2xl font-bold text-gray-900">6. Limitation of Liability</h2>
               </div>
-              <p>Castinity provides informational guidance only and makes no warranties regarding the outcomes of your service provider interactions. We are not liable for any decisions you make based on our informational support.</p>
+              <p>Heliorabeam provides informational guidance only and makes no warranties regarding the outcomes of your service provider interactions. We are not liable for any decisions you make based on our informational support.</p>
             </div>
 
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-200">
               <h2 className="font-display text-2xl font-bold text-gray-900 mb-3">7. Contact</h2>
-              <p className="text-gray-700">For questions about these terms, contact us at <a href="mailto:support@castinity.com" className="text-purple-600 hover:underline font-semibold">support@castinity.com</a> or call <a href="tel:+18886815944" className="text-purple-600 hover:underline font-semibold">(888) 681-5944</a>.</p>
+              <p className="text-gray-700">For questions about these terms, contact us at <a href="mailto:support@heliorabeam.com" className="text-purple-600 hover:underline font-semibold">support@heliorabeam.com</a> or call <a href="tel:+18886815944" className="text-purple-600 hover:underline font-semibold">(888) 681-5944</a>.</p>
             </div>
           </div>
         </motion.div>

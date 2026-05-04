@@ -85,7 +85,7 @@ const Contact = () => {
 
     setFormData(initialFormState);
     setErrors({});
-    setSuccessMessage("Your request passed validation and anti-spam checks. For secure follow-up on this static campaign site, call (888) 681-5944 or email support@castinity.com.");
+    setSuccessMessage("Your request passed validation and anti-spam checks. For secure follow-up on this static campaign site, call (888) 681-5944 or email support@heliorabeam.com.");
   };
 
   return (
@@ -116,13 +116,13 @@ const Contact = () => {
                 <div>
                   <h3 className="font-display text-xl font-bold text-foreground mb-4">Contact Information</h3>
                   <p className="text-muted-foreground text-sm mb-6">
-                    Castinity is a third-party service assistance startup. We are here to provide guidance — not to sell provider services.
+                    Heliorabeam is a third-party service assistance startup. We are here to provide guidance — not to sell provider services.
                   </p>
                 </div>
 
                 {[
                   { icon: Phone, label: "Phone", value: "(888) 681-5944", sub: "Mon–Fri, 9AM–6PM EST", link: "tel:+18886815944" },
-                  { icon: Mail, label: "Email", value: "support@castinity.com", sub: "We respond within 24 hours", link: "mailto:support@castinity.com" },
+                  { icon: Mail, label: "Email", value: "support@heliorabeam.com", sub: "We respond within 24 hours", link: "mailto:support@heliorabeam.com" },
                   { icon: MapPin, label: "Location", value: "6229 Lakewood DR W, University Place, WA 98457", sub: "Independent assistance nationwide" },
                   { icon: Clock, label: "Hours", value: "Monday – Friday", sub: "9:00 AM – 6:00 PM EST" },
                 ].map((info) => (
@@ -262,7 +262,7 @@ const Contact = () => {
                     </Button>
                   </div>
                   <p className="text-xs text-muted-foreground text-center">
-                    By submitting, you acknowledge that Castinity is a third-party assistance provider. This campaign page validates requests locally and does not store lead data in the browser.
+                    By submitting, you acknowledge that Heliorabeam is a third-party assistance provider. This campaign page validates requests locally and does not store lead data in the browser.
                   </p>
                 </form>
               </div>
@@ -271,7 +271,7 @@ const Contact = () => {
 
           <div className="mt-12 glass-card rounded-2xl p-6 text-center">
             <p className="text-xs text-muted-foreground">
-              Castinity is a third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Brand names, if mentioned, are used strictly for informational purposes only.
+              Heliorabeam is a third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Brand names, if mentioned, are used strictly for informational purposes only.
             </p>
           </div>
         </div>

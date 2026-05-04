@@ -34,7 +34,7 @@ const Privacy = () => (
                 </div>
                 <h2 className="font-display text-2xl font-bold text-gray-900">1. Who We Are</h2>
               </div>
-              <p>Castinity is a third-party service assistance startup, launched in 2026. We are not affiliated with, endorsed by, or sponsored by any cable, internet, or streaming service provider. This privacy policy describes how we collect, use, and protect your personal information when you use our services.</p>
+              <p>Heliorabeam is a third-party service assistance startup, launched in 2026. We are not affiliated with, endorsed by, or sponsored by any cable, internet, or streaming service provider. This privacy policy describes how we collect, use, and protect your personal information when you use our services.</p>
             </div>
 
             <div>
@@ -117,12 +117,12 @@ const Privacy = () => (
                 </div>
                 <h2 className="font-display text-2xl font-bold text-gray-900">6. Your Rights</h2>
               </div>
-              <p>You have the right to access, correct, or delete your personal information. To exercise these rights, contact us at support@castinity.com.</p>
+              <p>You have the right to access, correct, or delete your personal information. To exercise these rights, contact us at support@heliorabeam.com.</p>
             </div>
 
             <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-6 border border-indigo-200">
               <h2 className="font-display text-2xl font-bold text-gray-900 mb-3">7. Contact</h2>
-              <p className="text-gray-700">For privacy-related questions, contact us at <a href="mailto:support@castinity.com" className="text-primary hover:underline font-semibold">support@castinity.com</a> or call <a href="tel:+18886815944" className="text-primary hover:underline font-semibold">(888) 681-5944</a>.</p>
+              <p className="text-gray-700">For privacy-related questions, contact us at <a href="mailto:support@heliorabeam.com" className="text-primary hover:underline font-semibold">support@heliorabeam.com</a> or call <a href="tel:+18886815944" className="text-primary hover:underline font-semibold">(888) 681-5944</a>.</p>
             </div>
           </div>
         </motion.div>

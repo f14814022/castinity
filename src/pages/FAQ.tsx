@@ -7,7 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const faqs = [
   {
     q: "Are you an official cable or internet service provider?",
-    a: "No. Castinity is a third-party assistance platform. We are not an Internet Service Provider (ISP) and do not provide cable, internet, or streaming services directly.",
+    a: "No. Heliorabeam is a third-party assistance platform. We are not an Internet Service Provider (ISP) and do not provide cable, internet, or streaming services directly.",
   },
   {
     q: "Do you sell internet, cable, or streaming plans?",
@@ -35,11 +35,11 @@ const faqs = [
   },
   {
     q: "How do I contact you?",
-    a: "You can reach us by phone at (888) 681-5944 or by email at support@castinity.com. When you call, you'll hear: 'Thank you for calling Castinity, a service assistance platform.'",
+    a: "You can reach us by phone at (888) 681-5944 or by email at support@heliorabeam.com. When you call, you'll hear: 'Thank you for calling Heliorabeam, a service assistance platform.'",
   },
   {
     q: "Are you affiliated with any internet or cable company?",
-    a: "No. Castinity is a third-party service assistance startup, launched in 2026. We are not affiliated with, endorsed by, or sponsored by any cable, internet, or streaming service provider.",
+    a: "No. Heliorabeam is a third-party service assistance startup, launched in 2026. We are not affiliated with, endorsed by, or sponsored by any cable, internet, or streaming service provider.",
   },
 ];
 
@@ -75,7 +75,7 @@ const FAQ = () => (
 
         <div className="mt-12 glass-card rounded-2xl p-6 text-center">
           <p className="text-xs text-muted-foreground">
-            Castinity is a third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider.
+            Heliorabeam is a third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider.
           </p>
         </div>
       </div>

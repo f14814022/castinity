@@ -97,7 +97,7 @@ const Services = () => (
           <Headphones className="mx-auto mb-3 h-8 w-8 text-primary" />
           <h3 className="font-display text-xl font-bold text-foreground mb-2">Need Assistance?</h3>
           <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
-            Our service fees are separate from any provider charges. We charge for our assistance only. Castinity is not affiliated with, authorized by, or endorsed by any service provider.
+            Our service fees are separate from any provider charges. We charge for our assistance only. Heliorabeam is not affiliated with, authorized by, or endorsed by any service provider.
           </p>
         </div>
       </div>

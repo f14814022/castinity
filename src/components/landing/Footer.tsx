@@ -62,7 +62,7 @@ const Footer = () => {
     setEmail("");
     setHoneypot("");
     setError("");
-    setSuccessMessage("Signup passed validation. To finalize securely on this static site, email support@castinity.com from the same address.");
+    setSuccessMessage("Signup passed validation. To finalize securely on this static site, email support@heliorabeam.com from the same address.");
   };
 
   return (
@@ -123,7 +123,7 @@ const Footer = () => {
             </span>
           </Link>
           <p className="text-sm text-gray-300 leading-relaxed mb-4">
-            Castinity is a third-party service assistance startup. All trademarks belong to their respective owners.
+            Heliorabeam is a third-party service assistance startup. All trademarks belong to their respective owners.
           </p>
           <div className="space-y-2 text-sm text-gray-300">
             <div className="flex items-center gap-2">
@@ -132,7 +132,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center gap-2">
               <Mail className="h-3.5 w-3.5 text-primary" />
-              <span>support@castinity.com</span>
+              <span>support@heliorabeam.com</span>
             </div>
             <div className="flex items-start gap-2">
               <MapPin className="h-3.5 w-3.5 text-primary mt-0.5 flex-shrink-0" />
@@ -160,7 +160,7 @@ const Footer = () => {
 
         <div className="mt-12 border-t border-white/10 pt-6">
           <p className="text-xs text-gray-400 text-center">
-            © 2026 Castinity. All rights reserved. Castinity is a third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Brand names, if mentioned, are used strictly for informational purposes only.
+            © 2026 Heliorabeam. All rights reserved. Heliorabeam is a third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider. Brand names, if mentioned, are used strictly for informational purposes only.
           </p>
         </div>
       </div>

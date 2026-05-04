@@ -11,7 +11,7 @@ const DISPOSABLE_EMAIL_DOMAINS = new Set([
   "getnada.com",
 ]);
 
-const RATE_LIMIT_PREFIX = "castinity-rate-limit:";
+const RATE_LIMIT_PREFIX = "Heliorabeam-rate-limit:";
 
 export type RateLimitResult = {
   allowed: boolean;

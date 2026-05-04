@@ -68,7 +68,7 @@ const ConnectedSection = () => (
       </div>
 
       <p className="mt-10 text-center text-xs text-gray-400 italic">
-        Castinity is an independent third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider.
+        Heliorabeam is an independent third-party service assistance provider. We are not affiliated with, authorized by, or endorsed by any internet, broadband, or cable TV service provider.
       </p>
     </div>
   </section>
